@@ -35,7 +35,7 @@ function App() {
     return (
         <AnimatePresence>
         <BrowserRouter>
-            <main className="flex flex-col max-w-[1000px] mx-auto p-5 font-middleEarth items-center text-primary-content min-h-[100svh]">
+            <main className="flex flex-col max-w-[1000px] mx-auto p-5 font-middleEarth items-center text-primary-content min-h-[100vh]">
                 <Header />
                 <Routes>
                     <Route path="/" element={loader ? <Home /> : <Loader />} />
