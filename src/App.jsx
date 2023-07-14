@@ -5,6 +5,7 @@ import { GlobalState } from "./assets/api/GlobalState";
 import Loader from "./components/Loader";
 import Home from "./page/Home";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -30,11 +31,12 @@ function App() {
 
     return (
         <BrowserRouter>
-            <main className="flex flex-col max-w-[1000px] mx-auto p-5 font-middleEarth items-center text-primary-content">
+            <main className="flex flex-col max-w-[1000px] mx-auto p-5 font-middleEarth items-center text-primary-content min-h-[100svh]">
                 <Header />
                 <Routes>
                     <Route path="/" element={loader ? <Home /> : <Loader />} />
                 </Routes>
+                <Footer />
             </main>
         </BrowserRouter>
     );

@@ -20,7 +20,7 @@ export default function Home() {
                 </div>
             )}
 
-            <div className="flex flex-col w-full gap-2">
+            <div className="flex flex-col w-full gap-2 max-h-[500px] overflow-auto no-scrollbar">
                 {answers.length > 0 &&
                 answers.map((answer) => (
                     <BoxContainer
