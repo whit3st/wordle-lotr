@@ -7,7 +7,9 @@ export default function Input() {
         if (e.key === "Enter" && userInput) {
             writeAnswer(data, userInput, currentCharacter, setAnswers, answers)
             e.target.value = ''
-            e.target.blur();
+            if (window.outerWidth < 768) {
+                e.target.blur()
+            }
         }
     };
     const inputHandler = (e) => {
