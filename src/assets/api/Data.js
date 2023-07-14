@@ -144,3 +144,22 @@ export const ansverValidate = (data, currentCharacter, matchingNames) => {
                 }
             }
   }
+
+
+  // Animation
+
+  export const variants = {
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 1,
+            staggerChildren: 0.4,
+        },
+    },
+    exit: {
+        opacity: 0,
+    },
+};
