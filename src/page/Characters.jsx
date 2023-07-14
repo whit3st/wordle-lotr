@@ -1,37 +1,35 @@
 import { GlobalState } from "../assets/api/GlobalState";
-import { motion } from "framer-motion";
-import { variants } from "../assets/api/Data";
 import Name from "../components/Name";
 export default function Characters() {
     const { data } = GlobalState();
     const characters = Object.values(data.characters);
     return (
-        <motion.div
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={variants}
-            className="flex flex-col"
-        >
-            <h1 className="text-4xl self-start my-5 font-bold">Characters</h1>
-            <motion.div className="grid grid-cols-1 lg:grid-cols-2 justify-between gap-3 mt-5 w-full">
-                {characters.map((character) => (
-                    <div
-                        key={character.name}
-                        className="flex w-full flex-col gap-1 rounded-lg px-3 py-2 bg-white bg-opacity-30"
-                    >
+        <div className="grid grid-cols-1 gap-3 mt-10">
+            <h1 className="text-2xl mb-5 font-bold">All {characters.length} Characters</h1>
+            {characters.map((character) => (
+                <div
+                    key={character.name}
+                    className="collapse collapse-arrow bg-base-200 bg-opacity-40"
+                >
+                    <input
+                        type="radio"
+                        name="my-accordion-2"
+                    />
+                    <div className="collapse-title text-xl font-medium">
                         <Name name={character.name} />
-                        <li>{character.affiliation.split(" ")[0]}</li>
+                    </div>
+                    <div className="collapse-content flex flex-col gap-2">
+                        <li>{character.affiliation}</li>
                         <li>{character.sex}</li>
                         <li>{character.race}</li>
                         <li>{character.position}</li>
-                        <h2 className="text-xl font-semibold">Traits</h2>
+                        <Name name="Traits" />
                         {character.traits.map((trait) => (
                             <li key={trait}>{trait}</li>
                         ))}
                     </div>
-                ))}
-            </motion.div>
-        </motion.div>
+                </div>
+            ))}
+        </div>
     );
 }
