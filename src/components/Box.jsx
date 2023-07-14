@@ -7,7 +7,7 @@ export default function Box({ status, children }) {
         <motion.div
             variants={variants}
             className={
-                "flex flex-col items-center justify-center font-semibold w-full text-xs max-w-[100%] px-1 tracking-wide break-words h-[60px] shadow-sm rounded-md " +
+                "flex flex-col items-center justify-center font-semibold text-xs w-[130px] text-center px-1 tracking-wide break-words h-[60px] shadow-sm rounded-md " +
                 (status
                     ? "bg-success bg-opacity-100"
                     : "bg-error bg-opacity-100")

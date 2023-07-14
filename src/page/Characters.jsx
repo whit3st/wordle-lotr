@@ -12,7 +12,7 @@ export default function Characters() {
                     className="collapse collapse-arrow bg-base-200 bg-opacity-40"
                 >
                     <input
-                        type="radio"
+                        type="checkbox"
                         name="my-accordion-2"
                     />
                     <div className="collapse-title text-xl font-medium">

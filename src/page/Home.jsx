@@ -15,12 +15,12 @@ export default function Home() {
             variants={variants}
             className="flex flex-col items-center w-max h-max gap-2"
         >
-            <div className="flex flex-col gap-2 items-center my-5 max-w-max sm:flex-row sm:gap-10">
+            <div className="flex flex-col gap-2 items-center my-5 max-w-max sm:flex-row md:gap-10">
                 <Input />
                 <Button />
             </div>
             {answers.length > 0 && (
-                <div className="grid grid-cols-2 md:grid-cols-4 items-center text-center w-full text-lg my-5 font-semibold tracking-wide">
+                <div className="grid grid-cols-2 sm:grid-cols-4 items-center text-center w-full text-lg my-5 font-semibold tracking-wide">
                     <p>Sex</p>
                     <p>Race</p>
                     <p>Affiliation</p>

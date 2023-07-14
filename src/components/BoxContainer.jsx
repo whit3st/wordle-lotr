@@ -22,7 +22,7 @@ export default function BoxContainer({
             className="flex flex-col w-full justify-center items-center rounded-md gap-3 py-5 bg-white bg-opacity-30"
         >
             <Name name={name} />
-            <div className="grid grid-cols-2 md:grid-cols-4 w-full justify-between gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 px-2 justify-between gap-5">
                 <Box status={sex} >{data.characters[name].sex}</Box>
                 <Box status={race} >{data.characters[name].race}</Box>
                 <Box status={affiliation} >{data.characters[name].affiliation.split(' ')[0]}</Box>
