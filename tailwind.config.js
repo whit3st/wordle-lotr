@@ -8,11 +8,14 @@ export default {
     extend: {
       fontFamily: {
         middleEarth: ["'Middle Earth'", "sans-serif"],
+      },
+      backgroundImage: {
+        "lotrdle": "url('/bg.jpg')",
       }
     },
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["pastel"],
+    themes: ["bumblebee"],
   },
 }

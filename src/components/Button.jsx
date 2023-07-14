@@ -14,7 +14,7 @@ export default function Button() {
             id="button"
             aria-label="button"
             onClick={(e) => clickHandler(e)}
-            className="btn btn-primary btn-sm text-xs sm:btn-md border border-primary-content"
+            className="btn btn-secondary btn-sm text-xs sm:btn-md border border-primary-content"
         >
             Lotrdle!
         </button>
