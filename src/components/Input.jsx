@@ -21,7 +21,7 @@ export default function Input() {
             name="text"
             placeholder="Lotrdle!"
             autoComplete="off"
-            className="input input-secondary bg-secondary text-primary-content font-semibold input-sm sm:input-md sm:text-lg border border-primary-content"
+            className="input input-secondary text-primary-content font-semibold input-sm sm:input-md sm:text-lg border border-primary-content"
         />
     );
 }

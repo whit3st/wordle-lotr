@@ -19,7 +19,7 @@ export default function BoxContainer({
             animate="animate"
             exit="exit"
             variants={variants}
-            className="flex flex-col w-full justify-center items-center border border-primary-content rounded-md gap-5 py-5 bg-white bg-opacity-10"
+            className="flex flex-col w-full justify-center items-center rounded-md gap-3 py-5 bg-white bg-opacity-30"
         >
             <Name name={name} />
             <div className="grid grid-cols-2 md:grid-cols-4 w-full justify-between gap-5">
