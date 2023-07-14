@@ -10,7 +10,7 @@ export default {
         middleEarth: ["'Middle Earth'", "sans-serif"],
       },
       backgroundImage: {
-        "lotrdle": "url('/bg.jpg')",
+        "lotrdle": "url('/bg.webp')",
       }
     },
   },
