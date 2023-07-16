@@ -11,6 +11,9 @@ export default {
       },
       backgroundImage: {
         "lotrdle": "url('/bg.webp')",
+      },
+      animation: {
+        'spin-slow': 'spin 6s linear infinite',
       }
     },
   },

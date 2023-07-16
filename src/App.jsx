@@ -43,8 +43,7 @@ function App() {
                     <Routes>
                         <Route
                             path="/"
-                            // element={loader ? <Home /> : <Loader />}
-                            element={<Home />}
+                            element={loader ? <Home /> : <Loader />}
                         />
                         <Route
                             path="/characters"
