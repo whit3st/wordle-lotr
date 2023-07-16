@@ -4,8 +4,9 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import { GlobalState } from "../assets/api/GlobalState";
 import BoxContainer from "../components/BoxContainer";
+import YouWonModal from "../components/YouWonModal";
 export default function Home() {
-    const { answers } = GlobalState();
+    const { answers, won } = GlobalState();
 
     return (
         <motion.div
@@ -42,6 +43,7 @@ export default function Home() {
                         />
                     ))}
             </div>
+            {!won ? '' : <YouWonModal />}
         </motion.div>
     );
 }

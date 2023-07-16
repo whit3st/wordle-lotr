@@ -21,29 +21,24 @@ export const getDataFromFirebase = async (location) => {
 export const timeCalculator = async () => {
     // Get the data from the API
     const data = await getDataFromFirebase("Time Calculation");
-    // Get the current timestamp
-    const currentTimeStamp = new Date().getTime();
-
-    const previousTimeStamp = data.lastUpdated; // Retrieve the previous timestamp from storage
-
-    // Calculate the difference between the current and previous timestamps in milliseconds
-    const timeDifference = currentTimeStamp - previousTimeStamp;
-
-    // Convert the time difference to hours
-    const hoursDifference = timeDifference / (1000 * 60 * 60);
-
-    // Check if 24 hours (or more) have passed
-    if (hoursDifference >= 24) {
-        console.log("24 hours have passed.");
-        console.log("Updating data.");
-        const data = await updateDataInFirebase();
-        return data;
+    // Get the current date
+    const currentDate = new Date().toISOString().slice(0, 10);
+  
+    const previousDate = data.lastUpdated; // Retrieve the previous date from storage
+  
+    // Check if the current date is higher than the previous date
+    if (currentDate > previousDate) {
+      console.log("A new day has started.");
+      console.log("Updating data.");
+      const updatedData = await updateDataInFirebase();
+      return updatedData;
     } else {
-        console.log("Less than 24 hours have passed.");
-        console.log("Nothing to update.");
-        return data;
+      console.log("Still the same day.");
+      console.log("Nothing to update.");
+      return data;
     }
-};
+  };
+  
 
 export const randomIndex = async () => {
     // Get the data from the API
@@ -64,7 +59,7 @@ export const updateDataInFirebase = async () => {
     // ASSIGN RANDOM INDEX TO DATA
     data.index = randomNumber;
     // GET CURRENT TIMESTAMP
-    const currentTimeStamp = new Date().getTime();
+    const currentTimeStamp = new Date().toISOString().slice(0, 10);
     // ASSIGN CURRENT TIMESTAMP TO DATA
     data.lastUpdated = currentTimeStamp;
     try {
@@ -125,7 +120,7 @@ export const ansverValidate = (data, currentCharacter, matchingNames) => {
   }
 
 
-  export const writeAnswer = (data, userInput, currentCharacter, setAnswers, answers) => {
+  export const writeAnswer = (data, userInput, currentCharacter, setAnswers, answers, setWon) => {
     const match = checkMatch(data.names, userInput);
             if (match.length > 0) {
                 const heh = ansverValidate(data, currentCharacter, match);
@@ -136,9 +131,7 @@ export const ansverValidate = (data, currentCharacter, matchingNames) => {
                     setAnswers([heh, ...answers]);
             
                     if (currentCharacter.name === match[0]) {
-                        document.querySelector('input').placeholder = 'You Won!';
-                        document.querySelector('input').disabled = true;
-                        alert(`You won! Today's character is ${match[0]}`);
+                        setWon(true);
                     }
 
                 }

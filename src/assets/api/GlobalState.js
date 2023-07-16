@@ -12,4 +12,6 @@ export const GlobalState = create((set) => ({
     setMatchingNames: (newNames) => set({ matchingNames: newNames }),
     answers: [],
     setAnswers: (newAnswers) => set({ answers: newAnswers }),
+    won: false,
+    setWon: (newWon) => set({ won: newWon }),
 }));
