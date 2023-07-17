@@ -38,7 +38,7 @@ function App() {
     return (
         <AnimatePresence>
             <BrowserRouter>
-                <main className="flex flex-col max-w-[1000px] mx-auto p-5 font-middleEarth items-center text-primary-content min-h-[100vh]">
+                <main className="flex flex-col bg-lotrdle bg-cover bg-no-repeat bg-fixed mx-auto py-5 font-middleEarth items-center text-primary-content min-h-[100vh] px-0 sm:px-[5vw] md:px-[10vw] lg:px-[20vw]">
                     <Header />
                     <Routes>
                         <Route
