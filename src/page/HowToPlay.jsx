@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 export default function HowToPlay() {
     return (
-        <div className="flex flex-col justify-center items-center text-center mt-10 gap-5 h-full">
+        <div className="flex flex-col justify-center items-center text-center mt-10 gap-5 h-full px-5">
             <h1 className="text-2xl font-semibold max-w-[500px]">
                 You can start playing by writing one of the{" "}
                 <Link

@@ -6,13 +6,13 @@ export default function Accordion({ character }) {
     return (
         <div className="flex flex-col w-full">
             <div
-                className="text-2xl font-semibold text-center py-2 bg-secondary rounded-t-md"
+                className="text-2xl md:text-3xl font-semibold text-center py-2 bg-secondary rounded-t-md"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {character.name}
             </div>
             {isOpen && (
-                <div className="flex font-semibold flex-col gap-2 bg-secondary rounded-b-md transition-all p-5">
+                <div className="flex font-semibold md:text-lg flex-col gap-2 bg-secondary rounded-b-md transition-all p-5">
                     <li>{character.affiliation}</li>
                     <li>{character.sex}</li>
                     <li>{character.race}</li>
