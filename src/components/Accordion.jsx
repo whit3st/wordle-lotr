@@ -6,7 +6,7 @@ export default function Accordion({ character }) {
     return (
         <div className="flex flex-col w-full">
             <div
-                className="text-2xl md:text-3xl font-semibold text-center py-2 bg-secondary rounded-t-md"
+                className="text-2xl md:text-3xl font-semibold text-center py-2 bg-secondary rounded-t-md cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {character.name}
