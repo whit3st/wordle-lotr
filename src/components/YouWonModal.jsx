@@ -9,6 +9,9 @@ export default function YouWonModal() {
         setTimeout(() => {
             document.getElementById("modal").classList.remove('opacity-100')
         }, 4500);
+        setTimeout(() => {
+            document.getElementById("modal").classList.add('hidden')
+        }, 5300);
     })
     
 
