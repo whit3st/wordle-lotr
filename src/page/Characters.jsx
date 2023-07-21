@@ -1,16 +1,33 @@
-import { GlobalState } from "../assets/api/GlobalState";
-import Accordion from "../components/Accordion";
+import CharacterCard from "../components/CharacterCard";
+import CharacterTitle from "../components/CharacterTitle";
 export default function Characters() {
-    const { data } = GlobalState();
-    const characters = Object.values(data.characters);
+    const scrollAmount = 304;
+    const container = document.querySelector('.swipe');
+    function scrollLeft() {
+        container.scrollTo({
+          left: container.scrollLeft - scrollAmount,
+          behavior: 'smooth',
+        });
+      }
+    
+      function scrollRight() {
+        container.scrollTo({
+          left: container.scrollLeft + scrollAmount,
+          behavior: 'smooth',
+        });
+      }
     return (
-        <div className="grid grid-cols-1 gap-3 my-10 w-full px-5">
-            <h1 className="text-2xl mb-5 font-bold">All {characters.length} Characters</h1>
-            {characters.map((character) => (
-                <Accordion key={character.name} character={character} />
-            ))}
-
-            
+        <div className="flex flex-col gap-3 my-10 w-full px-5">
+            <CharacterTitle />
+            <div className="flex w-full justify-between items-center">
+                <button className="btn btn-secondary btn-sm text-xs md:btn-md border border-primary-content hidden lg:block" onClick={scrollLeft}>
+                    <img src="/arrow-left.svg" alt="left arrow" width={30} />
+                </button>
+                <CharacterCard />
+                <button className="btn btn-secondary btn-sm text-xs md:btn-md border border-primary-content hidden lg:block" onClick={scrollRight}>
+                    <img src="/arrow-right.svg" alt="right arrow" width={30} />
+                </button>
+            </div>
         </div>
     );
 }
