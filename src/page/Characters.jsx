@@ -1,18 +1,23 @@
+import { useEffect, useRef } from "react"; 
 import CharacterCard from "../components/CharacterCard";
 import CharacterTitle from "../components/CharacterTitle";
 export default function Characters() {
-    const scrollAmount = 304;
-    const container = document.querySelector('.swipe');
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    containerRef.current = document.querySelector('.swipe');
+  }, []);
+    const scrollAmount = 305;
     function scrollLeft() {
-        container.scrollTo({
-          left: container.scrollLeft - scrollAmount,
+      containerRef.current.scrollTo({
+          left: containerRef.current.scrollLeft - scrollAmount,
           behavior: 'smooth',
         });
       }
     
       function scrollRight() {
-        container.scrollTo({
-          left: container.scrollLeft + scrollAmount,
+        containerRef.current.scrollTo({
+          left: containerRef.current.scrollLeft + scrollAmount,
           behavior: 'smooth',
         });
       }
