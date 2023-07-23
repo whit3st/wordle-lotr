@@ -5,7 +5,7 @@ export default function NotFound() {
             <h1 className="text-5xl mt-[100px] text-center font-bold">
                 Let&apos;s go back to Rivendell.
             </h1>
-            <Link to="/" className="self-end text-2xl border px-5 py-2 border-primary-content hover:-translate-x-2 hover:invert bg-white font-semibold transition-all">← Rivendell</Link>
+            <Link to="/" className="btn btn-secondary btn-sm text-xs md:btn-md border border-primary-content w-max self-end hover:-translate-x-2  font-semibold transition-all">← Rivendell</Link>
         </div>
     );
 }
