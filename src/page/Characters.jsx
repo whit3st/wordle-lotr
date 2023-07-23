@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"; 
 import CharacterCard from "../components/CharacterCard";
 import CharacterTitle from "../components/CharacterTitle";
+import SwiperButton from "../components/SwiperButton";
 export default function Characters() {
   const containerRef = useRef(null);
 
@@ -24,14 +25,10 @@ export default function Characters() {
     return (
         <div className="flex flex-col gap-3 my-10 w-full px-5">
             <CharacterTitle />
-            <div className="flex w-full justify-between items-center">
-                <button className="btn btn-secondary btn-sm text-xs md:btn-md border border-primary-content hidden lg:block" onClick={scrollLeft}>
-                    <img src="/arrow-left.svg" alt="left arrow" width={30} />
-                </button>
+            <div className="flex w-full justify-between items-center">  
+                <SwiperButton to="left" onClick={scrollLeft}/>
                 <CharacterCard />
-                <button className="btn btn-secondary btn-sm text-xs md:btn-md border border-primary-content hidden lg:block" onClick={scrollRight}>
-                    <img src="/arrow-right.svg" alt="right arrow" width={30} />
-                </button>
+                <SwiperButton to="right" onClick={scrollRight}/>
             </div>
         </div>
     );
